@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.color1 {color: #ffea5a;}
+.color2 {color: #fcfd76;}
+.color3 {color: #0636d2;}
+.color4 {color: #508dff;}
+.color5 {color: #f6f4f5;}
+
+.paginaInicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f6f4f5
+}
+
+.imagenInicio{
+    width: 50%;
+    height: 100vh;
+}
+
+.textoInicio{
+    text-align: center;
+    width: 50%;
+}
+.botonEntrar{
+    background-color: #508dff ;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.entrarInicio{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    margin: 15px;
+}
+
+.parrafoInicio{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 15px;
+}
+
+.tablaProductos{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+
+}
+
+td{
+    text-align: center;
+    vertical-align: middle;
+}
+
+tr{
+    text-align: center;
+    vertical-align: middle;
+}
+
+main{
+    min-height: calc(100% - 4rem);
+    margin-bottom: 6rem;
+    margin-top: 6rem;
+}
+
+footer{
+    background-color: #508dff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+}
+
+.encabezado{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    background-color: #508dff;
+}
+
+.nombreEmpresa{
+    height: 55px;
+}
+
+.logo{
+    display: inline-block;
+    background-color: #fcfd76;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+}
+
+.agregarProducto, .vencimientosProximos{
+    background-color: #fcfd76;
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.agregarProducto:hover, .vencimientosProximos:hover, .buscarProductoBoton:hover{
+    background-color: #ffea5a;
+}
+
+.buscarProducto{
+    display: flex;
+    align-items: center;
+}
+
+.buscarProductoTexto{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+}
+
+.buscarProductoBoton{
+    background-color: #fcfd76;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.form{
+    margin: 20px 0px;
+   
+}
+
+button.btn{
+    background-color: #fcfd76;
+    border: 1px solid black;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: bold; 
+}
+
+button.btn:hover{
+    background-color: #ffea5a;
+    border: 1px solid black;
+}
+
