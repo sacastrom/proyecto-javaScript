@@ -24,21 +24,25 @@ let arrayProductos = [snackPalitosPanceta, snackPalitosPicante, caramelosBerry, 
 
 let tabla = document.getElementById("miTabla");
 
+//FUNCIÓN PARA MOSTRAR LOS PRODUCTOS
+
+let mostrarProductos = () => {
+  arrayProductos.forEach((producto) => {
+    crearFila(producto);
+});
+};
+
 //TRABAJAMOS CON EL LOCAL STORAGE.
 
 if(localStorage.getItem("productosAgregados")){
   arrayProductos = JSON.parse(localStorage.getItem("productosAgregados"));
   tabla.innerHTML = "";
-  console.log(arrayProductos)
-  arrayProductos.forEach((producto) => {
-    crearFila(producto);
-});
+  console.log(arrayProductos);
+  mostrarProductos();
 }else{
   arrayProductos = [snackPalitosPanceta, snackPalitosPicante, caramelosBerry, lataCaramelos];
   tabla.innerHTML = "";
-  arrayProductos.forEach((producto) => {
-    crearFila(producto);
-});
+  mostrarProductos();
 };
 
 
@@ -66,9 +70,7 @@ function agregarProductoNuevo(){
   let tabla = document.getElementById("miTabla");
   tabla.innerHTML = "";
 
-  arrayProductos.forEach((producto) => {
-      crearFila(producto);
-    });
+  mostrarProductos();
 };
 
 
@@ -133,7 +135,6 @@ function crearFila(producto){
   botonEliminar.innerHTML = "Eliminar";
   botonEliminar.classList.add("btn");
   botonEliminar.id = `boton-eliminar-${productoId}`; // Agregar el ID único como parte del ID del botón "Eliminar"
-  console.log(botonEliminar.id)
   eliminarCell.appendChild(botonEliminar);
 
   //Agregamos evento al botón de eliminar unidades
@@ -151,9 +152,7 @@ let eliminarDeLaLista = (sku) => {
   const indice = arrayProductos.indexOf(producto);
   arrayProductos.splice(indice,1);
   tabla.innerHTML = ""; 
-  arrayProductos.forEach((producto) => {
-    crearFila(producto);
-  });
+  mostrarProductos();
 
   localStorage.setItem("productosAgregados", JSON.stringify(arrayProductos));
 };
@@ -164,13 +163,10 @@ let eliminarDeLaLista = (sku) => {
 let sumarUnidades = (sku) => {
   const producto = arrayProductos.find(producto => producto.sku === sku);
   let cantidadActual = parseInt(producto.cantidad);
-  console.log(cantidadActual);
   cantidadNueva = cantidadActual + 1;
   producto.cantidad = cantidadNueva;
   tabla.innerHTML = ""; 
-  arrayProductos.forEach((producto) => {
-    crearFila(producto);
-  });
+  mostrarProductos();
 
   localStorage.setItem("productosAgregados", JSON.stringify(arrayProductos));
 };
@@ -184,9 +180,7 @@ let restarUnidades = (sku) => {
   cantidadNueva = cantidadActual - 1;
   producto.cantidad = cantidadNueva;
   tabla.innerHTML = ""; 
-  arrayProductos.forEach((producto) => {
-    crearFila(producto);
-  });
+  mostrarProductos();
 
   localStorage.setItem("productosAgregados", JSON.stringify(arrayProductos));
 };
