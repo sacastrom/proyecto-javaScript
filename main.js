@@ -14,13 +14,13 @@ class Producto{
 
 const snackPalitosPanceta = new Producto (8858223012377, "./images/palitosPanceta.jpg", "Snack palitos sabor panceta ahumada 60 gr", "2023-03-13", 20);
 const snackPalitosPicante = new Producto (8858283008479, "./images/palitosPicantes.jpg", "Snack palitos sabor picante 60 gr", "2025-03-13", 20);
-const caramelosBerry = new Producto (4710035230230, "./images/caramelosBerries.jpg", "Caramelos masticables Hi-Chew sabor frutos rojos 110 gr", "2025-04-01", 20);
+const caramelosBerry = new Producto (4710035230230, "./images/caramelosBerries.jpg", "Caramelos masticables Hi-Chew sabor frutos rojos 110 gr", "2023-04-01", 20);
 const lataCaramelos = new Producto (4901630002531, "./images/lataCaramelos.jpg", "Lata de caramelos Tumba de Luciérnagas Sakura Drops", "2025-03-24", 20);
 
 // CREAMOS UN ARRAY PARA LOS PRODUCTOS 
 
 let arrayProductos = [snackPalitosPanceta, snackPalitosPicante, caramelosBerry, lataCaramelos];
-
+let arrayFiltrado = false;
 
 let tabla = document.getElementById("miTabla");
 
@@ -150,9 +150,19 @@ function crearFila(producto){
 let eliminarDeLaLista = (sku) => {
   const producto = arrayProductos.find(producto => producto.sku === sku);
   const indice = arrayProductos.indexOf(producto);
-  arrayProductos.splice(indice,1);
-  tabla.innerHTML = ""; 
-  mostrarProductos();
+  
+  if(arrayFiltrado){
+    const productoFiltrado = vencimientosCercanos.find(producto => producto.sku === sku);
+    const indiceFiltrado = vencimientosCercanos.indexOf(productoFiltrado);
+    vencimientosCercanos.splice(indiceFiltrado,1);
+    tabla.innerHTML = ""; 
+    arrayProductos.splice(indice,1);
+    mostrarResultados(vencimientosCercanos);
+  }else{
+    arrayProductos.splice(indice,1);
+    tabla.innerHTML = ""; 
+    mostrarProductos();
+  }
 
   localStorage.setItem("productosAgregados", JSON.stringify(arrayProductos));
 };
@@ -161,12 +171,21 @@ let eliminarDeLaLista = (sku) => {
 
 //FUNCIÓN PARA SUMAR UNIDADES
 let sumarUnidades = (sku) => {
-  const producto = arrayProductos.find(producto => producto.sku === sku);
-  let cantidadActual = parseInt(producto.cantidad);
-  cantidadNueva = cantidadActual + 1;
-  producto.cantidad = cantidadNueva;
-  tabla.innerHTML = ""; 
-  mostrarProductos();
+  if(arrayFiltrado){
+    const producto = vencimientosCercanos.find(producto => producto.sku === sku);
+    let cantidadActual = parseInt(producto.cantidad);
+    cantidadNueva = cantidadActual + 1;
+    producto.cantidad = cantidadNueva;
+    tabla.innerHTML = ""; 
+    mostrarResultados(vencimientosCercanos);
+  }else{
+    const producto = arrayProductos.find(producto => producto.sku === sku);
+    let cantidadActual = parseInt(producto.cantidad);
+    cantidadNueva = cantidadActual + 1;
+    producto.cantidad = cantidadNueva;
+    tabla.innerHTML = ""; 
+    mostrarProductos();
+  }
 
   localStorage.setItem("productosAgregados", JSON.stringify(arrayProductos));
 };
@@ -174,16 +193,25 @@ let sumarUnidades = (sku) => {
 
 //FUNCIÓN PARA RESTAR UNIDADES
 let restarUnidades = (sku) => {
-  const producto = arrayProductos.find(producto => producto.sku === sku);
-  let cantidadActual = parseInt(producto.cantidad);
+  if(arrayFiltrado){
+    const producto = vencimientosCercanos.find(producto => producto.sku === sku);
+    let cantidadActual = parseInt(producto.cantidad);
+    cantidadNueva = cantidadActual - 1;
+    producto.cantidad = cantidadNueva;
+    tabla.innerHTML = ""; 
+    mostrarResultados(vencimientosCercanos);
+  }else{
+    const producto = arrayProductos.find(producto => producto.sku === sku);
+    let cantidadActual = parseInt(producto.cantidad);
+    cantidadNueva = cantidadActual - 1;
+    producto.cantidad = cantidadNueva;
+    tabla.innerHTML = "";
+    mostrarProductos();
+    }
   
-  cantidadNueva = cantidadActual - 1;
-  producto.cantidad = cantidadNueva;
-  tabla.innerHTML = ""; 
-  mostrarProductos();
-
   localStorage.setItem("productosAgregados", JSON.stringify(arrayProductos));
 };
+
 
 
 
@@ -193,26 +221,28 @@ const inputBusqueda = document.getElementById("busqueda");
 const listaResultados = document.getElementById("resultados");
 
 inputBusqueda.addEventListener("input", () => {
-  const busqueda = inputBusqueda.value.toLowerCase();
-  const productosFiltrados = arrayProductos.filter(producto => producto.nombre.toLowerCase().includes(busqueda));
+  let busqueda = inputBusqueda.value.toLowerCase();
+  let productosFiltrados = arrayProductos.filter(producto => producto.nombre.toLowerCase().includes(busqueda));
   mostrarResultados(productosFiltrados); 
 });
 
 
 
+
 //FUNCION PARA FILTRAR POR VENCIMIENTO
+
  const boton = document.getElementById('botonVencimiento');
+ const hoy = new Date();
+ const dosMesesDespues = new Date(hoy.getFullYear(), hoy.getMonth()+2, hoy.getDate());
+  let vencimientosCercanos = arrayProductos.filter(producto =>{
+  let fechaVencimiento = new Date(producto.fecha);
+  return fechaVencimiento > hoy && fechaVencimiento <= dosMesesDespues;
+ });
 
 function vencimiento(){
-  const hoy = new Date();
-  const dosMesesDespues = new Date(hoy.getFullYear(), hoy.getMonth()+2, hoy.getDate());
-  const vencimientosCercanos = arrayProductos.filter(producto =>{
-   const fechaVencimiento = new Date(producto.fecha);
-   return fechaVencimiento > hoy && fechaVencimiento <= dosMesesDespues;
-  })
-
   if(vencimientosCercanos.length !== 0){
     mostrarResultados(vencimientosCercanos);
+    arrayFiltrado = true;
   }else{
     tabla.innerHTML = "";
     let mensaje = document.createElement("p");
@@ -223,6 +253,8 @@ function vencimiento(){
  };
 
  boton.addEventListener('click', vencimiento);
+
+
 
 
 
