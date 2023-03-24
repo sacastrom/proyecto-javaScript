@@ -1,0 +1,215 @@
+{
+    "productos":
+[
+    {
+        "sku": 7798253182515,
+        "imagen": "./images/palitosPanceta.jpg",
+        "nombre": "Snack palitos sabor panceta 60 gr",
+        "fecha": "2023-04-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182516,
+        "imagen": "./images/caramelosBerries.jpg",
+        "nombre": "Caramelos Hi-Chew Sabor Mix de frutos rojos",
+        "fecha": "2023-05-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182517,
+        "imagen": "./images/lataCaramelos.jpg",
+        "nombre": "Lara de Caramelos Tumba de Luciérnagas Sakura Drops",
+        "fecha": "2023-06-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182518,
+        "imagen": "./images/palitosPicantes.jpg",
+        "nombre": "Snack palitos picantes 60 gr ",
+        "fecha": "2026-04-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7031146157396,
+        "imagen": "./images/31146157396.jpg",
+        "nombre": "Fideos Instantáneos Sabor Miso Picante 125 gr",
+        "fecha": "2026-04-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182520,
+        "imagen": "./images/4902555175.jpg",
+        "nombre": "Galletita Amarilla",
+        "fecha": "2023-07-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182521,
+        "imagen": "./images/490255517561.jpg",
+        "nombre": "Galletita Azul",
+        "fecha": "2026-07-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182522,
+        "imagen": "./images/711844120037.jpg",
+        "nombre": "Salsa picante 50gr",
+        "fecha": "2026-04-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182523,
+        "imagen": "./images/711844120082.jpg",
+        "nombre": "Salsa picante con ajos 56 gr",
+        "fecha": "2023-04-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182524,
+        "imagen": "./images/4710094106118.jpg",
+        "nombre": "Te con leche marca Lipton",
+        "fecha": "2023-04-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182525,
+        "imagen": "./images/4710154013110.jpg",
+        "nombre": "Soda sabor maracuyá",
+        "fecha": "2023-04-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182526,
+        "imagen": "./images/47101540131.jpg",
+        "nombre": "Cheetos sabor Takoyaki",
+        "fecha": "2023-04-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182527,
+        "imagen": "./images/4710783089029.jpg",
+        "nombre": "Miso con hindashi",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182528,
+        "imagen": "./images/4710958920010.jpg",
+        "nombre": "Te Negro",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182529,
+        "imagen": "./images/4710958920119.jpg",
+        "nombre": "Te de burbujas",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182530,
+        "imagen": "./images/4710958924476.jpg",
+        "nombre": "Cafe con leche y sal rosada",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182531,
+        "imagen": "./images/4901174310710.jpg",
+        "nombre": "Furikake con algas",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182532,
+        "imagen": "./images/4902555.jpg",
+        "nombre": "Galletitas Rojas",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182533,
+        "imagen": "./images/4902555175614.jpg",
+        "nombre": "Galletita Verde",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182534,
+        "imagen": "./images/6911316600034.jpg",
+        "nombre": "Caramelos Duros sabor Frutilla",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182535,
+        "imagen": "./images/6923392182946.jpg",
+        "nombre": "Salsa para marinar",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182536,
+        "imagen": "./images/6924743913387.jpg",
+        "nombre": "Cheetos sabor pavo",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182537,
+        "imagen": "./images/6924743913585.jpg",
+        "nombre": "Cheetos sabor barbacoa",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182538,
+        "imagen": "./images/6937491381766.jpg",
+        "nombre": "Bebida Alcohólica a base de Arroz Glutinoso",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182539,
+        "imagen": "./images/6945601703230.jpg",
+        "nombre": "Pastillitas mentoladas",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182540,
+        "imagen": "./images/8850206117109.jpg",
+        "nombre": "Salsa de Ostras",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182541,
+        "imagen": "./images/8850206253531.jpg",
+        "nombre": "Salsa de Pescado",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182542,
+        "imagen": "./images/8855444007113.jpg",
+        "nombre": "Snack a base de Maiz Sabor Original",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182543,
+        "imagen": "./images/8855444007212.jpg",
+        "nombre": "Snack a base de Maiz Sabor Barbacoa",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    },
+    {
+        "sku": 7798253182544,
+        "imagen": "./images/4710094106118.jpg",
+        "nombre": "Te con leche marca Lipton",
+        "fecha": "2026-03-13",
+        "cantidad": 5
+    }
+]
+}

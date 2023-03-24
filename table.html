@@ -5,28 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla - Lista de productos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
         <header>
             <section class="encabezado">
                 <div class="nombreEmpresa">
-                    <a class="logo" href="" class="logo">UMAMI STOCK</a>
+                    <a class="logo" href="">UMAMI STOCK</a>
                 </div>
                 <div class="actions">
-                    <button type="button"  class="agregarProducto" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Nuevo Producto</button>
+                    <button type="button"  class="agregarProducto" id="agregarProductoInicial" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Nuevo Producto</button>
                     <form class="buscarProducto">
                         <input class="buscarProductoTexto" id="busqueda" type="text" placeholder="Buscar...">
                     </form>
                     <button class="vencimientosProximos" id="botonVencimiento">Vencimientos cercanos</button>
+                    <button class="vencimientosProximos" id="botonHistorico">Histórico</button>
                 </div> 
             </section> 
         </header>
+        
         <section class="tablaProductos">
+          <div id="mensajeUsuario"></div>
             <table class="table table-striped table-hover table-bordered" id="tablaProductos">
-                <thead>
+                <thead id="encabezadoTabla">
                   <tr>
                     <th scope="col">SKU</th>
                     <th scope="col">IMG</th>
@@ -36,16 +41,26 @@
                     <th scope="col" colspan="3">ACCIONES</th>
                   </tr>
                 </thead>
+                
                 <tbody id="miTabla" >
                   
                 </tbody>
               </table>
+              
+              <div class="mensajed" id="crearListado">
+                
+              </div>
+              <div  id="mensaje">
+
+              </div>
+              <div id="historico">
+
+              </div>
               <div id="resultados">
 
               </div>
-              <p id="mensaje">
-
-              </p>
+              
+              
               
               
   <!-- Modal -->
@@ -57,10 +72,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form>
+            <form id="formularioNuevoProducto">
                 <div class="form-group form">
                   <label for="formGroupExampleInput">SKU</label>
-                  <input type="text" id="skuProducto" class="form-control" id="formGroupExampleInput" placeholder="Ingrese el código SKU">
+                  <input type="number" id="skuProducto" class="form-control" id="formGroupExampleInput" placeholder="Ingrese el código SKU">
                 </div>
                 <div class="form-group form">
                     <label for="exampleFormControlFile1">IMAGEN</label>
@@ -72,17 +87,15 @@
                 </div>
                 <div class="form-group form">
                     <label for="formGroupExampleInput2">FECHA</label>
-                    <input type="text" id="fechaProducto" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese la fecha de vencimiento">
+                    <input type="text" id="fechaProducto" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese la fecha de vencimiento (aaaa-mm-dd)">
                   </div>
                   <div class="form-group form">
                     <label for="formGroupExampleInput2">CANTIDAD</label>
-                    <input type="text" id="cantidadProducto" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese las unidades disponibles">
+                    <input type="number" id="cantidadProducto" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese las unidades disponibles">
                   </div>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="submit" class="btn btn-primary" id="agregarProducto">Agregar</button>
               </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" onclick="agregarProductoNuevo()">Agregar</button>
         </div>
       </div>
     </div>
@@ -95,6 +108,9 @@
             </div>
         </footer>
     </main>
+    <!-- SWEET ALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>

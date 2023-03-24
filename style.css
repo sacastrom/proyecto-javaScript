@@ -81,6 +81,10 @@ footer{
     align-items: center;
 }
 
+p{
+    margin-bottom: 0rem;
+}
+
 .encabezado{
     width: 100%;
     margin: 0 auto;
@@ -101,6 +105,7 @@ footer{
     display: inline-block;
     background-color: #fcfd76;
     font-size: 22px;
+    border: 1px solid black;
     font-weight: bold;
     text-decoration: none;
     color: black;
@@ -115,12 +120,13 @@ footer{
 
 .agregarProducto, .vencimientosProximos{
     background-color: #fcfd76;
-    border: none;
+    border: 1px solid black;
     padding: 10px;
     margin-right: 10px;
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
+    display: none;
 }
 
 .agregarProducto:hover, .vencimientosProximos:hover, .buscarProductoBoton:hover{
@@ -137,11 +143,13 @@ footer{
     border-radius: 5px;
     border: none;
     margin-right: 10px;
+    border: 1px solid black;
+    display: none;
 }
 
 .buscarProductoBoton{
     background-color: #fcfd76;
-    border: none;
+    border: 1px solid black;
     padding: 10px 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -162,6 +170,7 @@ button.btn{
     cursor: pointer;
     margin-right: 10px;
     font-weight: bold; 
+    color: black;
 }
 
 button.btn:hover{
@@ -169,3 +178,56 @@ button.btn:hover{
     border: 1px solid black;
 }
 
+.mensajed{
+    margin-right: 0px;
+    text-align: center;
+}
+  
+
+.info{
+    border-radius: 5px;
+    font-weight: bold;
+}
+.mensaje{
+    background-color: #fcfd76;
+    padding: 15px;
+    text-align: center;
+    border:  none;
+    border-radius: 0px;
+    font-size: 22px;
+    margin-bottom: 2rem;
+}
+
+.mensajeDos{
+    background-color: #fcfd76;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 0px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.swal2-styled.swal2-confirm {
+    border: 0;
+    border-radius: 0.25em;
+    background: initial;
+    background-color: #508dff;
+    color: #fff;
+    font-size: 1em;
+}
+
+.botonVolver{
+    background-color: #fcfd76;
+    border: 1px solid black;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-right: 30px;
+    padding-left: 30px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    float: right;
+   align-items: center;
+}
